@@ -1,0 +1,104 @@
+
+
+body {
+    background-color: grey;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1, h2 {
+    text-align: center;
+    padding-top: 30px;
+    
+}
+
+p {
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.input-area {
+    margin: auto;
+    width: 70%;
+    padding: 10px 20px 10px 20px;
+    background-color: lightgray;
+    border-radius: 8px;
+    border-bottom-style: dashed;
+    border-bottom-color: grey   ;
+}
+
+
+#calMenu {
+    display: flex;
+    flex: 20%;
+    flex-direction: row;
+    margin: auto;
+    width: 70%;
+    padding: 0px;
+    font-size: large;
+    animation: fading 1s;
+}
+
+
+  
+  @keyframes fading {
+    from {opacity: 0.5;}
+    to {opacity: 1;}
+  }
+
+input {
+    width: 40px;
+    height: 20px;
+    background-color: rgb(201, 196, 196);
+}
+
+
+.button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 20px 20px 10px;
+    color: black;
+}
+
+.button:hover {
+    background-color: rgba(175, 166, 166, 0.699);
+    color: darkred;
+    animation: fading 1s;
+
+} 
+
+.position {
+    background-color: lightgray;
+    width: 160px;
+    padding-bottom: 10px;
+}
+
+.submit-area {
+    margin: auto;
+    width: 70%;
+    padding: 10px 20px 10px 20px;
+    background-color: lightgray;
+    border-radius: 8px;
+    border-bottom-style: dashed;
+    border-bottom-color: grey;
+    height: 30px;
+    
+}
+
+
+
+input[type=submit] {
+   height: 35px; 
+   width:100px;
+   background-color: rgb(149, 180, 163);
+   cursor: pointer;
+   border-radius: 4px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
