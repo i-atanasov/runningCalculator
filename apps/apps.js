@@ -1,4 +1,5 @@
 
+
 function radioDis() {
   if ('input[name="raceDistance"]:checked') {
     document.getElementById("distance").value = document.querySelector('input[name="raceDistance"]:checked').value;
@@ -66,8 +67,6 @@ function calculateIt() {
        
     }
     }
-  
-
 
   function clearTime() {
     document.getElementById("tH").value = "";
@@ -86,5 +85,50 @@ function calculateIt() {
     clearPace();
   }
 
- //   var selectType = document.getElementById("operand1-type");
+  const resultDistances = [1.5, 3, 5, 10, 15, 20, 21.098, 42.195, 50, 100];
+  const resultTimes = [];
+  let timeAlter;
+
+ function basePace() {
+  const resultTimes = [];
+
+  var distance = document.getElementById("distance").value;
+  var tH = document.getElementById("tH").value;
+  var tM = document.getElementById("tM").value;
+  var tS = document.getElementById("tS").value;
+  var timeSeconds = tH*3600 + tM*60 + tS*1;
+
+  if (distance == 0) {
+    alert("Please enter distance!");
+    return;
+  } else if (tH == 0 && tM == 0 && tS == 0) {
+    alert("Please enter time!");
+    return;
+  } 
+
+    for (var i = 0; i < resultDistances.length; i++) {
+      timeAlter = timeSeconds*Math.pow((resultDistances[i]/distance), 1.06);
+
+      tH = Math.floor(timeAlter/3600);
+      timeAlter = timeAlter - tH*3600;
+      tM = Math.floor(timeAlter/60);
+      timeAlter = (timeAlter - tM*60);
+      tS = Math.round(timeAlter%3600);
+
+      if (tH > 0) {
+      var tempString = tH + " h " + tM + " m " + tS + " s";
+      } else {
+      var tempString = tM + " m " + tS + " s";
+      }
+      resultTimes.push(tempString);
+    }
+    
+    varLenght = resultTimes.length;
+    for (w = 0; w < varLenght; w++) {      
+    document.getElementById("resultsTable").rows[w+1].cells.namedItem("projectedResult").innerHTML = resultTimes[w];
+    }
+    
+    
+  }
+
 

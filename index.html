@@ -15,9 +15,9 @@
             <h2>Plan for your race!</h2>
         </header>
 
-        <div id = "calMenu">
-            <a class = "button position" onclick="changePosition()" href="index.html" style="border-top-left-radius: 10px;">Pace</a>
-            <a class = "button" href = #>Race predictor</a>
+        <div id = "mainNav">
+            <a class = "button position" href="index.html" style="border-top-left-radius: 10px;">Pace</a>
+            <a class = "button" href = "race.html">Race predictor</a>
             <a class = "button" href = #>Elevation effect</a>
             <a class = "button" href = # style="border-top-right-radius: 10px;">Nutrition</a>
         </div>
@@ -29,16 +29,26 @@
             <p class = "clearElement" title = "Clear distance selection" onclick=clearDistance()>&#9746;&nbsp;&nbsp;</p>   
             <input type="number" name="operand" id="distance" min = 0.1 /> km
            <!-- <div id="fixedDistances"> -->
+            <label class="container">
                 <input type="radio" onclick=radioDis() name="raceDistance" value=5> 5k
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
                 <input type="radio" onclick=radioDis() name="raceDistance" value=10> 10k
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
                 <input type="radio" onclick=radioDis() name="raceDistance" value=21.098> Half marathon
+                <span class="checkmark"></span>
+            </label>
+            <label class="container"> 
                 <input type="radio" onclick=radioDis() name="raceDistance" value=42.195> Marathon
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
                 <input type="radio" onclick=radioDis() name="raceDistance" value=98.4> V100
-              <!-- </div>
-               <select id="operand1-type">
-                    <option value="km">km</option>
-                    <option value="mi">mi</option>
-              ``  </select> -->   
+                <span class="checkmark"></span>
+            </label>
             </div>
 
             <div class="input-area">
@@ -66,20 +76,11 @@
         
         <script> 
         document.getElementById("submitButton").addEventListener("click", calculateIt);
-        document.getElementById("clearButton").addEventListener("click", clearAll);        
+        document.getElementById("clearButton").addEventListener("click", clearAll);   
+
+
         </script>
         
-        <!--<div class="output-area">
-            <h2>Output</h2>
-         
-            <h3>Operation</h2>
-            <span id="final-operation">???</span>
-        
-            
-            <h3>Return Value:</h2>
-            <span id="result">???</span>
-            </div>
-        </div> -->
 
     </body>
 
