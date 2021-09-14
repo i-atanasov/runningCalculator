@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang=en>
+    <head>
+
+    <title>Race predictor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/runningCal.css">
+    <script src="apps/apps.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Ultimate running calculator</h1>
+            <h2>Plan for your race!</h2>
+        </header>
+
+        <div id = "mainNav">
+            <a class = "button" href="index.html" style="border-top-left-radius: 10px;">Pace</a>
+            <a class = "button position" href = "race.html">Race predictor</a>
+            <a class = "button1" >Elevation effect</a>
+            <a class = "button1" style="border-top-right-radius: 10px;">Nutrition</a>
+        </div>
+
+        <div class="input-area"">
+            <h2>Your best performance so far</h2>
+        <form method="GET">
+            <p class="chosenOperand">Distance:</p>
+            <p class = "clearElement" title = "Clear distance selection" onclick=clearDistance()>&#9746;&nbsp;&nbsp;</p>   
+
+            <label for="rDistance"></label>
+            <input type="number" name="rDistance" id="distance" min = 0.1 /> km &nbsp;&nbsp;&nbsp;
+
+            <label class="container">
+                <input type="radio" onclick=radioDis() name="raceDistance" value=5> 5k
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                <input type="radio" onclick=radioDis() name="raceDistance" value=10> 10k
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                <input type="radio" onclick=radioDis() name="raceDistance" value=15> 15k 
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                <input type="radio" onclick=radioDis() name="raceDistance" value=21.098> Half marathon
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">
+                <input type="radio" onclick=radioDis() name="raceDistance" value=42.195> Marathon 
+                <span class="checkmark"></span>
+            </label>
+        </form>
+        </div>
+        <div class="input-area"> 
+            <p class="chosenOperand">Time:</p>
+            <p class = "clearElement" title = "Clear time selection" onclick = clearTime()>&#9746;&nbsp;&nbsp;</p>   
+
+            <label for="rTime"></label>
+               <input type="number" name="rTime" id="tH" min = 0 /> h
+               <input type="number" name="rTime" id="tM" min = 0 /> m
+               <input type="number" name="rTime" id="tS" min = 0 /> s
+        </div>
+
+        <div class="submit-area">
+            <input type="submit" id="submitButton" value="Calculate">
+            <input type="submit" id="clearButton" value="Clear all">
+        </div>
+
+        <div class="input-area"">
+            <table id="resultsTable">
+                <tr>
+                    <th>Race distance&nbsp;&nbsp;&nbsp;</th>
+                    <th id = "projectedResult">Projected result*</th>
+                </tr>
+                <tr>
+                    <td>1500 m</td>
+                    <td id = "projectedResult"></td>
+                </tr>
+                <tr>
+                    <td>3000 m</td>
+                    <td id = "projectedResult"></td>
+                </tr>
+                <tr>
+                    <td>5000 m</td>
+                    <td id = "projectedResult"></td>
+                </tr>
+                <tr>
+                    <td>10 km</td>
+                    <td id = "projectedResult"></td>
+                </tr>
+                <tr>
+                    <td>15 km</td>
+                    <td id = "projectedResult"></td>
+                </tr>
+                <tr>
+                    <td>20 km</td>
+                    <td id = "projectedResult"></td>
+                </tr>
+                <tr>
+                    <td>Half Marathon</td>
+                    <td id = "projectedResult"></td>
+                </tr>
+                <tr>
+                    <td>Marathon</td>
+                    <td id = "projectedResult"></td>
+                </tr>
+                <tr>
+                    <td>50k**</td>
+                    <td id = "projectedResult"></td>
+                </tr>
+                <tr>
+                    <td >100k**</td>
+                    <td id = "projectedResult"></td>
+                </tr>
+                <tr>
+                </tr>
+            </table>
+        </div>
+        
+
+        
+        <script> 
+            document.getElementById("submitButton").addEventListener("click", basePace);
+            document.getElementById("clearButton").addEventListener("click", clearAll);
+            
+        </script>
+    </body>
+</html>
